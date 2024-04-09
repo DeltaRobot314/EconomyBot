@@ -26,7 +26,6 @@ In [config.py](https://github.com/DorianAarno/PointsBot/blob/main/config.py) rep
 * [disnake-pagination](https://github.com/DorianAarno/Paginator)
 * [discordpy-antispam](https://github.com/DorianAarno/SpamFilter) 
 * Discord.py
-* NLTK
 
  
 ## 📖 License

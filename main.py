@@ -1,9 +1,16 @@
 from disnake import *
 from disnake.ext import commands
 import os, traceback
-from config import Token, Prefix
+from config import Prefix
 import nltk
+from dotenv import load_dotenv
+import discord
+
+load_dotenv()
 nltk.download('words')
+
+
+Token = os.getenv('Token')
 
 intents=Intents.default()
 intents.message_content=True

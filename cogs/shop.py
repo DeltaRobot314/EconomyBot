@@ -4,6 +4,7 @@ from Paginator import CreatePaginator
 import traceback
 from assets import functions as func
 from config import PointsName, Log_channel
+import discord
 
 class Shop(Cog):
     def __init__(self, bot):

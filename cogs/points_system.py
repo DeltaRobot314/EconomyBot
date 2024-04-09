@@ -4,7 +4,9 @@ from assets import functions as func
 import traceback
 import asyncio
 from SpamFilter import AntiSpam
-from config import POINTS_TO_BE_GIVEN_PER_MESSAGE
+import discord
+
+POINTS_TO_BE_GIVEN_PER_MESSAGE = 2 # Points which will be given to members per message.
 
 class PointsSystem(commands.Cog):
     def __init__(self,bot):
@@ -17,6 +19,9 @@ class PointsSystem(commands.Cog):
         try:
             if await AntiSpam(dictionary=True).check(self.bot, msg.channel, msg.author):
                 return
+
+            if msg.author.guild_permissions.administrator:
+                POINTS_TO_BE_GIVEN_PER_MESSAGE = 3 # = POINTS_TO_BE_GIVEN_PER_MESSAGE*1.5
 
             datas = await func.DataFetch(self.bot, 'all', 'points', msg.guild.id)
             if len(datas) != 0:

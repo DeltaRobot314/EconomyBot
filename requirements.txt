@@ -1,3 +1,4 @@
 discord
 disnake-pagination
 discordpy-antispam
+python-dotenv

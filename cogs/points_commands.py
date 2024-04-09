@@ -4,6 +4,7 @@ from assets import functions as func
 import traceback
 from config import PointsName
 from Paginator import CreatePaginator
+import discord
 
 class PointsCommands(commands.Cog):
     def __init__(self,bot):
@@ -50,7 +51,7 @@ class PointsCommands(commands.Cog):
     @remove.error
     async def remove_error(self,ctx,error):
         if isinstance(error, (commands.BadArgument, commands.MissingRequiredArgument)):
-            await ctx.send(embed=func.ErrorEmbed('Error', 'Correct syntax is: `.points remove <member> <number>`. Use slash command for more simplicity.'))
+            await ctx.send(embed=func.ErrorEmbed('Error', 'Correct syntax is: `/eco points remove <member> <number>`.'))
 
     @points.command()
     async def add(self, ctx, member: Member, number: int):
@@ -61,7 +62,7 @@ class PointsCommands(commands.Cog):
     @add.error
     async def add_error(self,ctx,error):
         if isinstance(error, (commands.BadArgument, commands.MissingRequiredArgument)):
-            await ctx.send(embed=func.ErrorEmbed('Error', 'Correct syntax is: `.points add <member> <number>`. Use slash command for more simplicity.'))
+            await ctx.send(embed=func.ErrorEmbed('Error', 'Correct syntax is: `/eco points add <member> <number>`.'))
 
     @commands.command(aliases=['lb'])
     async def leaderboard(self,ctx):
